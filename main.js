@@ -8,10 +8,12 @@ let winner;
 let boardState;
 
 /*----- cached element references -----*/
-const boardEl = document.querySelector('#board');
+const board = document.querySelectorAll('#board');
+const s1 = document.querySelector(`#s1`)
 
 /*----- event listeners -----*/
-boardEl.addEventListener("click", clickFunct(e));
+board.addEventListener("click", clickFunct);
+s1.addEventListener("click", clickTest)
 
 /*----- functions -----*/
 init();
@@ -22,9 +24,12 @@ function init() {
   renderTurn();
 };
 
-function clickFunct(e) {
+function clickTest() {
   console.log("clicked!")
-  boardState[e.target] = 1;
+};
+
+function clickFunct(e) {
+  // boardState[e.target] = 1;
 };
 
 function render() {
