@@ -11,7 +11,7 @@ let boardState;
 const boardEl = document.querySelector('#board');
 
 /*----- event listeners -----*/
-boardEl.addEventListener("click", clickFunct(0));
+boardEl.addEventListener("click", clickFunct(e));
 
 /*----- functions -----*/
 init();
@@ -19,12 +19,17 @@ init();
 function init() {
   boardState = [0,0,0,0,0,0,0,0,0];
   turn = -1;
-  render();
+  renderTurn();
+};
+
+function clickFunct(e) {
+  console.log("clicked!")
+  boardState[e.target] = 1;
 };
 
 function render() {
+  // winTest();
   turnChange();
-  winTest();
 }
 
 function turnChange() {
@@ -35,8 +40,4 @@ function turnChange() {
   } else {
     turnMsg.innerText = "Player 2's Turn";
   }
-};
-
-function clickFunct(x) {
-  boardState[x] = 1;
 };

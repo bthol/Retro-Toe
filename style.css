@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
   }
+
   body {
     height: 100vh;
     margin: 0;
@@ -10,46 +11,52 @@
     align-items: center;
     background-color: rgb(0, 0, 0)
   }
+
   /* title */
   header {
-    font-size: 5vmin;
+    font-size: 5vw;
     font-weight: 600;
-    padding: 0vmin 3vmin;
-    border-radius: 1vmin 1vmin 0vmin 0vmin;
-    margin-bottom: .2vmin;
+    padding: 0vw 3vw;
+    border-radius: 1vw 1vw 0vw 0vw;
     background-color: rgb(255, 255, 0);
   }
+
   /* button */
   #btn1 {
-    font-size: 2vmin;
+    font-size: 2vw;
     font-weight: 800;
-    padding: 1vmin;
-    border: 0.5vmin solid rgb(0, 0, 0);
+    padding: 1vw;
+    border: 0.5vw solid rgb(0, 0, 0);
       border-radius: 2vmin;
     margin-top: 2vmin;
     background-color: rgb(255, 255,0);
   }
+
   #btn1:hover {
     transition: 130ms;
-    border: .5vmin solid rgb(255, 0, 0);
-      border-radius: 1.5vmin;
+    border: .5vw solid rgb(255, 0, 0);
+      border-radius: 1.5vw;
   }
+
   /* messages */
   #msg1 {
-    font-size: 3vmin;
+    font-size: 3vw;
     color: hsl(0, 0%, 100%);
   }
+
   /* board */
   #board {
     display: grid;
-    grid-template-columns: repeat(3, 10vmin);
-    grid-template-rows: repeat(3, 10vmin);
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
     background-color: rgba(255, 255, 255, .15);
   }
+
   #board > div {
-    border: .4vmin solid rgb(0, 0, 255);
-    margin: 0;
+    border: .4vw solid rgb(0, 0, 255);
+    margin: 0px;
   }
+
   #board > div:hover {
     background-color: rgb(255, 0, 0);
   }
