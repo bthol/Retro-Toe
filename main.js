@@ -2,22 +2,34 @@
 
 const wins = [];
 let turn;
-let winner;
 let boardState;
 
-const board = document.querySelector('#board').addEventListener("click", clickFunct);
+const board = document.querySelector('#board');
+board.addEventListener("click", clickFunct);
 const btnReset = document.querySelector(`#btn1`).addEventListener("click", init);
 
-init();
 function init() {
-  boardState = [0,0,0,0,0,0,0,0,0];
+  boardState = ["a","a","a","a","a","a","a","a","a"];
   turn = 1;
+  render();
+};
+
+function render() {
+  boardDisplay();
   turnDisplay();
 };
 
-function clickFunct(e) {
-  boardState[e.target.id] = e.target.id;
-  console.log(boardState);
+function boardDisplay() {
+  boardState.forEach(i => {
+    if (boardState[i] === i && turn === 1) {
+      console.log(turn);
+      //display X in space using i
+    }
+    if (boardState[i] === i && turn === -1) {
+      console.log(turn);
+      //dislplay O in space using i
+    }
+  })
 };
 
 function turnDisplay() {
@@ -27,5 +39,29 @@ function turnDisplay() {
     document.querySelector(`#msg1`).innerText = "Player 2's Turn";
   }
 };
+
+function turnChange() {
+  turn = turn * -1;
+};
+
+function clickFunct(e) {
+  let bool = false;
+  boardState.forEach(i => {
+    if (boardState[e.target.id] === e.target.id) {
+      bool = true;
+      document.querySelector(`#msg1`).innerText = "Space already taken";
+    }
+  })
+  if (bool === false) {
+    boardState[e.target.id] = e.target.id;
+    console.log(boardState);
+    boardDisplay(e);
+    turnChange();
+    turnDisplay();
+  }
+  bool = false;
+};
+
+init();
 
 //end_line
