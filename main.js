@@ -54,22 +54,17 @@ function winTest() {
     const items = document.querySelector(`#s${i} p`);
     arr.push(items.textContent);
   }
-  let xIndexes = [];
-  let oIndexes = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "X") {
-      xIndexes.push(i);
-    }
-    if (arr[i] === "O") {
-      oIndexes.push(i);
-    }
-  }
+  console.log(arr);
   let bool = false;
   for (let i = 0; i < wins.length; i++) {
-    if (wins[i] === xIndexes[i]) {
-      document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
-    } else if (wins[i] === oIndexes[i]) {
-      document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
+    //get indexes of duplicates in arr
+    //search for winning indexes in duplicates (irrespective of order or length)
+    if (wins[i] === arr[i]) {
+      if (turn === 1) {
+        document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
+      } else {
+        document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
+      }
     } else {
       bool = true;
     }
@@ -94,7 +89,6 @@ function clickFunct(e) {
     boardDisplay(index);
     winTest()
   }
-  bool = false;
 };
 
 init();
