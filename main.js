@@ -1,39 +1,31 @@
+//start_line
 
-/*----- constants -----*/
 const wins = [];
-
-/*----- app's state (variables) -----*/
 let turn;
 let winner;
 let boardState;
 
-/*----- cached element references -----*/
-const board = document.querySelector('#board');
+const board = document.querySelector('#board').addEventListener("click", clickFunct);
+const btnReset = document.querySelector(`#btn1`).addEventListener("click", init);
 
-/*----- event listeners -----*/
-board.addEventListener("click", clickFunct);
-
-/*----- functions -----*/
 init();
-
 function init() {
   boardState = [0,0,0,0,0,0,0,0,0];
   turn = 1;
-  // winTest();
-  // turnHandler();
+  turnDisplay();
 };
 
 function clickFunct(e) {
   boardState[e.target.id] = e.target.id;
-  document.querySelector(e.target)
+  console.log(boardState);
 };
 
-function turnHandler() {
-  const turnMsg = document.querySelector("#msg1");
+function turnDisplay() {
   if (turn === 1) {
-    turnMsg.innerText = "Player 1's Turn";
+    document.querySelector(`#msg1`).innerText = "Player 1's Turn";
   } else {
-    turnMsg.innerText = "Player 2's Turn";
+    document.querySelector(`#msg1`).innerText = "Player 2's Turn";
   }
-  turn = turn * -1;
 };
+
+//end_line
