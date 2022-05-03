@@ -1,7 +1,5 @@
 //start_line
 
-console.log(document.querySelector(`#0 > p`))
-
 const wins = [];
 let turn;
 let boardState;
@@ -12,24 +10,20 @@ const btnReset = document.querySelector(`#btn1`).addEventListener("click", init)
 
 function init() {
   boardState = ["a","a","a","a","a","a","a","a","a"];
+  for (let i = 0; i < boardState.length; i++) {
+    document.querySelector(`#s${i} p`).innerText = "";
+  }
   turn = 1;
-  render();
-};
-
-function render() {
-  boardDisplay();
   turnDisplay();
 };
 
 function boardDisplay(e) {
   boardState.forEach(i => {
     if (boardState[i] === i && turn === 1) {
-      console.log(turn);
-      document.querySelector(`#${e} p`).innerText = "X";
+      document.querySelector(`#s${e} p`).innerText = "X";
     }
     if (boardState[i] === i && turn === -1) {
-      console.log(turn);
-      document.querySelector(`#${e} p`).innerText = "O";
+      document.querySelector(`#s${e} p`).innerText = "O";
     }
   })
 };
@@ -46,20 +40,28 @@ function turnChange() {
   turn = turn * -1;
 };
 
+function winTest() {
+  if (boardState === wins) {
+    document.querySelector(`#msg1`).innerText = `Player ${turn}'s Wins`;
+  } else {
+    turnChange();
+    turnDisplay();
+  }
+}
+
 function clickFunct(e) {
   let bool = false;
+  const index = JSON.stringify(e.target.id).slice(2, 3);
   boardState.forEach(i => {
-    if (boardState[e.target.id] === e.target.id) {
+    if (boardState[i] === boardState[index]) {
       bool = true;
       document.querySelector(`#msg1`).innerText = "Space already taken";
     }
   })
   if (bool === false) {
-    boardState[e.target.id] = e.target.id;
-    console.log(boardState);
-    boardDisplay(e.target.id);
-    turnChange();
-    turnDisplay();
+    boardState[index] = index;
+    boardDisplay(index);
+    winTest()
   }
   bool = false;
 };
