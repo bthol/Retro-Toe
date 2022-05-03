@@ -62,7 +62,7 @@ body {
 
 #board > div {
   color: white;
-  font-size: xx-large;
+  font-size: 7vw;
   border: .6vw solid rgb(0, 0, 255);
   margin: -.2vw;
   display: flex;

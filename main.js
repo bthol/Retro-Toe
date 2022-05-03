@@ -1,5 +1,7 @@
 //start_line
 
+console.log(document.querySelector(`#0 > p`))
+
 const wins = [];
 let turn;
 let boardState;
@@ -19,15 +21,15 @@ function render() {
   turnDisplay();
 };
 
-function boardDisplay() {
+function boardDisplay(e) {
   boardState.forEach(i => {
     if (boardState[i] === i && turn === 1) {
       console.log(turn);
-      //display X in space
+      document.querySelector(`#${e} p`).innerText = "X";
     }
     if (boardState[i] === i && turn === -1) {
       console.log(turn);
-      //dislplay O in space
+      document.querySelector(`#${e} p`).innerText = "O";
     }
   })
 };
@@ -55,7 +57,7 @@ function clickFunct(e) {
   if (bool === false) {
     boardState[e.target.id] = e.target.id;
     console.log(boardState);
-    boardDisplay(e);
+    boardDisplay(e.target.id);
     turnChange();
     turnDisplay();
   }
