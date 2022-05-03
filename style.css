@@ -16,7 +16,7 @@ body {
 }
 
 /* title */
-#titleBoard p {
+#titleBoard .title {
   background-color: rgb(255, 255, 0);
   font-size: 5vw;
   font-weight: 600;
@@ -61,8 +61,13 @@ body {
 }
 
 #board > div {
+  color: white;
+  font-size: xx-large;
   border: .6vw solid rgb(0, 0, 255);
   margin: -.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #board > div:hover {

@@ -23,11 +23,11 @@ function boardDisplay() {
   boardState.forEach(i => {
     if (boardState[i] === i && turn === 1) {
       console.log(turn);
-      //display X in space using i
+      //display X in space
     }
     if (boardState[i] === i && turn === -1) {
       console.log(turn);
-      //dislplay O in space using i
+      //dislplay O in space
     }
   })
 };
