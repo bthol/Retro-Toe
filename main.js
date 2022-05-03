@@ -50,12 +50,31 @@ function turnChange() {
 
 function winTest() {
   let arr = [];
-  for (let i = 0; i < 8; i++) {
-    arr.push(document.querySelector(`#s${i} p`))
+  for (let i = 0; i < 9; i++) {
+    const items = document.querySelector(`#s${i} p`);
+    arr.push(items.textContent);
   }
-  if (arr === 1) {
-    document.querySelector(`#msg1`).innerText = `Player ${turn}'s Wins`;
-  } else {
+  let xIndexes = [];
+  let oIndexes = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "X") {
+      xIndexes.push(i);
+    }
+    if (arr[i] === "O") {
+      oIndexes.push(i);
+    }
+  }
+  let bool = false;
+  for (let i = 0; i < wins.length; i++) {
+    if (wins[i] === xIndexes[i]) {
+      document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
+    } else if (wins[i] === oIndexes[i]) {
+      document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
+    } else {
+      bool = true;
+    }
+  }
+  if (bool = true) {
     turnChange();
     turnDisplay();
   }
