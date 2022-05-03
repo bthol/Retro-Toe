@@ -8,41 +8,32 @@ let winner;
 let boardState;
 
 /*----- cached element references -----*/
-const board = document.querySelectorAll('#board');
-const s1 = document.querySelector(`#s1`)
+const board = document.querySelector('#board');
 
 /*----- event listeners -----*/
 board.addEventListener("click", clickFunct);
-s1.addEventListener("click", clickTest)
 
 /*----- functions -----*/
 init();
 
 function init() {
   boardState = [0,0,0,0,0,0,0,0,0];
-  turn = -1;
-  renderTurn();
-};
-
-function clickTest() {
-  console.log("clicked!")
+  turn = 1;
+  // winTest();
+  // turnHandler();
 };
 
 function clickFunct(e) {
-  // boardState[e.target] = 1;
+  boardState[e.target.id] = e.target.id;
+  document.querySelector(e.target)
 };
 
-function render() {
-  // winTest();
-  turnChange();
-}
-
-function turnChange() {
-  turn = turn * -1;
+function turnHandler() {
   const turnMsg = document.querySelector("#msg1");
   if (turn === 1) {
     turnMsg.innerText = "Player 1's Turn";
   } else {
     turnMsg.innerText = "Player 2's Turn";
   }
+  turn = turn * -1;
 };
