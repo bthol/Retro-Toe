@@ -11,17 +11,19 @@ const wins = [
 ];
 let turn;
 let boardState;
+let winner = false;
 
 const board = document.querySelector('#board');
 board.addEventListener("click", clickFunct);
 const btnReset = document.querySelector(`#btn1`).addEventListener("click", init);
 
 function init() {
+  turn = 1;
+  winner = false;
   boardState = ["a","a","a","a","a","a","a","a","a"];
   for (let i = 0; i < boardState.length; i++) {
     document.querySelector(`#s${i} p`).innerText = "";
   }
-  turn = 1;
   turnDisplay();
 };
 
@@ -49,27 +51,26 @@ function turnChange() {
 };
 
 function winTest() {
-  let arr = [];
-  for (let i = 0; i < 9; i++) {
-    const items = document.querySelector(`#s${i} p`);
-    arr.push(items.textContent);
-  }
-  console.log(arr);
   let bool = false;
-  for (let i = 0; i < wins.length; i++) {
-    //get indexes of duplicates in arr
-    //search for winning indexes in duplicates (irrespective of order or length)
-    if (wins[i] === arr[i]) {
-      if (turn === 1) {
-        document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
-      } else {
-        document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
-      }
+  // winner = true;
+  // for (let i = 0; i < wins.length; i++) {
+  //   for (let j = 0; j < wins[i].length; j++) {
+  //     if (i != j) {
+  //       if (boardState[wins[i][j]] = boardState[i]) {
+  //         winner = true;
+  //       }
+  //     }
+  //   }
+  if (winner) {
+    if (turn === 1) {
+      document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
     } else {
-      bool = true;
+      document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
     }
+  } else {
+    bool = true;
   }
-  if (bool = true) {
+  if (bool === true) {
     turnChange();
     turnDisplay();
   }
