@@ -12,14 +12,17 @@ const wins = [
 let turn;
 let boardState;
 let winner = false;
+let toggle = true;
 
-const board = document.querySelector('#board');
-board.addEventListener("click", clickFunct);
+if (toggle) {
+  const board = document.querySelector('#board').addEventListener("click", clickFunct);
+};
 const btnReset = document.querySelector(`#btn1`).addEventListener("click", init);
 
 function init() {
   turn = 1;
   winner = false;
+  toggle = true;
   boardState = ["a","a","a","a","a","a","a","a","a"];
   for (let i = 0; i < boardState.length; i++) {
     document.querySelector(`#s${i} p`).innerText = "";
@@ -51,22 +54,32 @@ function turnChange() {
 };
 
 function winTest() {
-  // for (let i = 0; i < wins.length; i++) {
-  //   for (let j = 0; j < wins[i].length; j++) {
-  //     if (i != j) {
-  //       if (boardState[wins[i][j]] = boardState[i]) {
-  //         winner = true;
-  //       }
-  //     }
-  //   }
-  // }
+  //are the boardState array values, which return at the indexes of the items in the nested array, all equal to each other? 
+  //if so, assign true to winner variable.
+  for (let i = 0; i < wins.length; i++) {
+    for (let j = 0; j < wins[i].length; j++) {
+      //iterates through j before increasing i
+      console.log(wins[i][j]);
+      //if on the same i index or if j is at a number divisible by the length of the array j iterates through
+      if (j % wins[i].length) {
+        //use the values at the j index to search the boardState
+        
+        //if those values equal each other
+        //then assign true to winner
+        // boardState[wins[i][j]]
+      }
+    }
+  }
   if (winner) {
     if (turn === 1) {
+      toggle = false;
       document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
     } else {
+      toggle = false;
       document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
     }
   } else if (!boardState.includes("a")) {
+    toggle = false;
     document.querySelector(`#msg1`).innerText = "Cats Game!";
   } else { 
     turnChange();
