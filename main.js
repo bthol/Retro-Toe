@@ -51,8 +51,6 @@ function turnChange() {
 };
 
 function winTest() {
-  let bool = false;
-  // winner = true;
   // for (let i = 0; i < wins.length; i++) {
   //   for (let j = 0; j < wins[i].length; j++) {
   //     if (i != j) {
@@ -61,16 +59,16 @@ function winTest() {
   //       }
   //     }
   //   }
+  // }
   if (winner) {
     if (turn === 1) {
       document.querySelector(`#msg1`).innerText = "Player 1 Wins!";
     } else {
       document.querySelector(`#msg1`).innerText = "Player 2 Wins!";
     }
-  } else {
-    bool = true;
-  }
-  if (bool === true) {
+  } else if (!boardState.includes("a")) {
+    document.querySelector(`#msg1`).innerText = "Cats Game!";
+  } else { 
     turnChange();
     turnDisplay();
   }
