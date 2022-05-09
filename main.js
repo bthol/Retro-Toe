@@ -56,14 +56,21 @@ function turnChange() {
 function winTest() {
   //are the boardState array values, which return at the indexes of the items in the nested array, all equal to each other? 
   //if so, assign true to winner variable.
+  let count = 0;
   for (let i = 0; i < wins.length; i++) {
     for (let j = 0; j < wins[i].length; j++) {
       //iterates through j before increasing i
-      console.log(wins[i][j]);
-      //if on the same i index or if j is at a number divisible by the length of the array j iterates through
-      if (j % wins[i].length) {
+      // console.log(wins[i][j]);
+      //how to test if on same i index?
+      //count for every starting index
+      //starting index for all the nested arrays
+      if (wins[i] === wins[0]) {
+        console.log(wins[i][j])
+      }
+      if (j % wins[i].length || wins[0][0]) {
+        count += 1;
+        // console.log(wins[1][0]);
         //use the values at the j index to search the boardState
-        
         //if those values equal each other
         //then assign true to winner
         // boardState[wins[i][j]]
