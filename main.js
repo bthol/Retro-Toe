@@ -8,6 +8,7 @@ const wins = [
   [0, 4, 8],
   [2, 4, 6]
 ];
+
 let turn;
 let boardState;
 let winner = false;
@@ -53,7 +54,7 @@ function turnChange() {
 };
 
 function winTest() {
-  //are the boardState array values, which return at the indexes of the items in the nested array, all equal to each other? 
+  //test if the boardState array values, which return at the indexes of the items in the nested array, all equal to each other? 
   //if so, assign true to winner variable.
   for (let i = 0; i < wins.length; i++) {
     for (let j = 0; j < wins[i].length; j++) {
@@ -62,7 +63,7 @@ function winTest() {
       //how to test if on same i index?
       //get winning index triplets
       if (wins[i] === wins[0]) {
-        console.log(boardState[wins[i][j]])
+        // console.log(boardState[wins[i][j]])
         //tests if any of the three are the same, but it needs to test if all three are the same
         if (!boardState[wins[i][j]].includes("a")) {
           //if this passes 3 times, then there is a win
