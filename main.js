@@ -31,12 +31,15 @@ function init() {
 };
 
 function boardDisplay(e) {
+  boardState[e] = e;
   boardState.forEach(i => {
     if (boardState[i] === i && turn === 1) {
       document.querySelector(`#s${e} p`).innerText = "X";
+      boardState[e] = "X";
     }
     if (boardState[i] === i && turn === -1) {
       document.querySelector(`#s${e} p`).innerText = "O";
+      boardState[e] = "O";
     }
   })
 };
@@ -54,21 +57,14 @@ function turnChange() {
 };
 
 function winTest() {
-  //test if the boardState array values, which return at the indexes of the items in the nested array, all equal to each other? 
-  //if so, assign true to winner variable.
   for (let i = 0; i < wins.length; i++) {
     for (let j = 0; j < wins[i].length; j++) {
-      //iterates through j before increasing i
-      // console.log(wins[i][j]);
-      //how to test if on same i index?
-      //get winning index triplets
-      if (wins[i] === wins[0]) {
-        // console.log(boardState[wins[i][j]])
-        //tests if any of the three are the same, but it needs to test if all three are the same
-        if (!boardState[wins[i][j]].includes("a")) {
-          //if this passes 3 times, then there is a win
-        }
+      //if same values on boardState at array indexes specified by nested arrays in wins
+      //then assign true to winner
+      if (i === 0) {
+        console.log(wins[i][j]);
       }
+      // console.log(boardState[wins[i][j]])
     }
   }
   if (winner) {
@@ -98,7 +94,6 @@ function clickFunct(e) {
     }
   })
   if (bool === false) {
-    boardState[index] = index;
     boardDisplay(index);
     winTest()
   }
