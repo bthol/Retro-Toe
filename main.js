@@ -97,5 +97,4 @@ function clickFunct(e) {
     winTest()
   }
 };
-
 init();
