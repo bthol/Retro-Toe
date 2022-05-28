@@ -66,7 +66,6 @@ function winTest() {
       winner = true;
     }
   }
-  console.log("break")
   if (winner) {
     if (turn === 1) {
       toggle = false;
