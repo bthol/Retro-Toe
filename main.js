@@ -58,15 +58,15 @@ function turnChange() {
 
 function winTest() {
   for (let i = 0; i < wins.length; i++) {
+    const arrVals = [];
     for (let j = 0; j < wins[i].length; j++) {
-      //if same values on boardState at array indexes specified by nested arrays in wins
-      //then assign true to winner
-      if (i === 0) {
-        console.log(wins[i][j]);
-      }
-      // console.log(boardState[wins[i][j]])
+      arrVals.push(boardState[wins[i][j]])
+    }
+    if (arrVals[0] === arrVals[1] && arrVals[1] === arrVals[2] && arrVals[0] !== "a") {
+      winner = true;
     }
   }
+  console.log("break")
   if (winner) {
     if (turn === 1) {
       toggle = false;
@@ -78,7 +78,7 @@ function winTest() {
   } else if (!boardState.includes("a")) {
     toggle = false;
     document.querySelector(`#msg1`).innerText = "Cats Game!";
-  } else { 
+  } else {
     turnChange();
     turnDisplay();
   }
