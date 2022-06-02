@@ -21,9 +21,9 @@ body {
   text-align: center;
   font-size: 5vw;
   font-weight: 600;
-  width: 30vw;
+  width: 30.4vw;
   border-radius: .5vw .5vw 0vw 0vw;
-  margin: 0px;
+  margin: .2vw -.2vw;
 }
 
 /* button */
@@ -55,6 +55,7 @@ body {
 
 /* board */
 #board {
+  width: 30vw;
   display: grid;
   grid-template-columns: repeat(3, 10vw);
   grid-template-rows: repeat(3, 10vw);
@@ -64,6 +65,7 @@ body {
 #board > div {
   color: white;
   font-size: 8vw;
+  width: 9.2vw;
   border: .6vw solid rgb(0, 0, 255);
   margin: -.2vw;
   display: flex;
