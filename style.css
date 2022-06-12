@@ -1,38 +1,43 @@
 * {
   box-sizing: 0 auto;
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   background-color: hsl(0, 0%, 5%)
 }
 
-#game-container {
+#game-border {
+  box-shadow: 0px 0px 0px 5px hsl(60, 100%, 40%);
+  border: .5vw solid hsl(240, 100%, 50%);
+  border-radius: 25px;
   height: 95vh;
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: .5vw solid blue;
 }
 
 /* title */
-#titleBoard .title {
+#game-container .title {
   background-color: rgb(255, 255, 0);
+  width: 60.4vmin;
   text-align: center;
-  font-size: 5vw;
+  font-size: 8vmin;
   font-weight: 600;
-  width: 30.4vw;
-  border-radius: .5vw .5vw 0vw 0vw;
+  letter-spacing: 1vmin;
+  border-radius: 25px 25px 0px 0px;
   margin: .2vw -.2vw;
 }
 
 /* button */
 #btn1 {
-  font-size: 2vw;
+  font-size: 3vmin;
   font-weight: 800;
+  font-family: sans-serif;
   padding: 1vw;
   border: 0.5vw solid rgb(0, 0, 0);
-  border-radius: 2vmin;
+  border-radius: 25px;
   margin-top: 2vmin;
   background-color: rgb(255, 255,0);
 }
@@ -40,32 +45,27 @@ body {
 #btn1:hover {
   transition: 130ms;
   border: .5vw solid rgb(255, 0, 0);
-  border-radius: 1.5vw;
-}
-
-#btn1:active {
-  background-color: hsl(60, 50%, 50%);
 }
 
 /* messages */
 #msg1 {
-  font-size: 3vw;
+  font-size: 4vmin;
+  margin: 8px 0px;
   color: hsl(0, 0%, 100%);
 }
 
 /* board */
 #board {
-  width: 30vw;
+  width: 60vmin;
   display: grid;
-  grid-template-columns: repeat(3, 10vw);
-  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 20vmin);
+  grid-template-rows: repeat(3, 20vmin);
   background-color: rgba(255, 255, 255, .125);
 }
 
 #board > div {
   color: white;
-  font-size: 8vw;
-  width: 9.2vw;
+  font-size: 15vmin;
   border: .6vw solid rgb(0, 0, 255);
   margin: -.2vw;
   display: flex;
