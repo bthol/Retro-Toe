@@ -3,7 +3,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 body {
-  background-color: hsl(0, 0%, 5%)
+  background-color: hsl(0, 0%, 5%);
 }
 
 #game-border {
@@ -12,8 +12,8 @@ body {
   box-shadow: 0px 0px 0px 1vmin hsl(60, 100%, 40%);
   border: 1vmin solid hsl(240, 100%, 50%);
   border-radius: 25px;
-  height: 95vh;
-  margin: 0;
+  padding: 8px 0px;
+  margin: 3vmin 1vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
