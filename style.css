@@ -12,9 +12,8 @@ body {
   box-shadow: 0px 0px 0px 1vmin hsl(60, 100%, 40%);
   border: 1vmin solid hsl(240, 100%, 50%);
   border-radius: 25px;
-  height: 100vh;
-  padding: 8px 0px;
-  margin: 3vmin 1vw;
+  height: 95vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -47,8 +46,7 @@ body {
   margin-top: 4vmin;
   background-color: rgb(255, 255,0);
 }
-
-#btn1:hover {
+#btn1:active {
   transition: 130ms;
   border: .7vmin solid rgb(255, 0, 0);
 }
@@ -79,6 +77,6 @@ body {
   align-items: center;
 }
 
-#board > div:hover {
+#board > div:active {
   background-color: rgb(255, 0, 0);
 }
