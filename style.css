@@ -46,7 +46,7 @@ body {
   margin-top: 4vmin;
   background-color: rgb(255, 255,0);
 }
-#btn1:active {
+#btn1:hover, #btn1:focus {
   transition: 130ms;
   border: .7vmin solid rgb(255, 0, 0);
 }
@@ -77,6 +77,6 @@ body {
   align-items: center;
 }
 
-#board > div:active {
+#board > div:hover, #board > div:focus {
   background-color: rgb(255, 0, 0);
 }
