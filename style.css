@@ -54,7 +54,6 @@ body {
 
 /* board */
 #board {
-  cursor: pointer;
   width: 60vmin;
   display: grid;
   grid-template-columns: repeat(3, 20vmin);
@@ -63,6 +62,7 @@ body {
 }
 
 #board > div {
+  cursor: pointer;
   color: white;
   font-size: 15vmin;
   border: 1.2vmin ridge rgb(0, 0, 255);
