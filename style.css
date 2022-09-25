@@ -5,80 +5,90 @@
 
 body {
   background-color: hsl(0, 0%, 5%);
-  height: 95vh;
+  --boardSize: 70vmin;
 }
 
 #game-border {
-  height: 100%;
-  -moz-box-shadow: 0px 0px 0px 5px hsl(60, 100%, 40%);
-  -webkit-box-shadow: 0px 0px 0px 5px hsl(60, 100%, 40%);
-  box-shadow: 0px 0px 0px 5px hsl(60, 100%, 40%);
-  border: 5px solid hsl(240, 100%, 50%);
+  -moz-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  -webkit-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  border: 1.5vmin solid hsl(240, 100%, 50%);
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 /* title */
-#game-container .title {
+.title {
   background-color: rgb(255, 255, 0);
-  width: 60.4vmin;
+  border: .4vmin solid rgb(255, 255, 0);
+  width: var(--boardSize);
   text-align: center;
   font-size: 9vmin;
   font-weight: 600;
-  letter-spacing: 1vmin;
+  letter-spacing: .5vw;
   border-radius: 10px 10px 0px 0px;
   margin: .2vmin -.2vmin;
 }
 
 /* button */
 #btn1 {
-  font-size: 3vmin;
+  font-size: 4.5vmin;
   font-weight: 600;
   font-family: sans-serif;
   padding: 1.3vmin;
-  border: 3px solid rgb(0, 0, 0);
+  border: 1vmin solid hsl(240, 100%, 50%);
   border-radius: 5vmin;
-  margin: 3vmin 0vmin;
+  margin: 20px 0px;
   background-color: rgb(255, 255,0);
 }
 
 /* messages */
 #msg1 {
-  font-size: 4vmin;
+  font-size: 5vmin;
   margin: 8px 0px;
   color: hsl(0, 0%, 100%);
 }
 
 /* board */
 #board {
-  width: 60vmin;
+  width: var(--boardSize);
+  height: var(--boardSize);
   display: grid;
-  grid-template-columns: repeat(3, 20vmin);
-  grid-template-rows: repeat(3, 20vmin);
+  grid-template-columns: repeat(3, calc(var(--boardSize) / 3));
+  grid-template-rows: repeat(3, calc(var(--boardSize) / 3));
   background-color: rgba(255, 255, 255, .125);
 }
 
 #board > div {
   cursor: pointer;
-  color: white;
   font-size: 15vmin;
-  border: 1.2vmin ridge rgb(0, 0, 255);
-  margin: -.2vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  margin: -.6vmin;
+  border: 2vmin ridge rgb(0, 0, 255);
+}
+
+#game-wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: baseline;
+  justify-content: center;
+  align-content: space-around;
 }
 
 /* ---------------- INTERACTIVITY ---------------- */
 @media(hover: hover) and (pointer: fine) {
+  #btn1 {
+    border: 1vmin solid rgb(0, 0, 0);
+  }
   #board > div:hover {
     background-color: rgb(255, 0, 0);
   }
   #btn1:hover {
     transition: 130ms;
-    border: 3px solid rgb(255, 0, 0);
+    border: 1vmin solid rgb(255, 0, 0);
   }
 }
