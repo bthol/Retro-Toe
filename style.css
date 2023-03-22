@@ -14,18 +14,16 @@ body {
   box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
   border: 1.5vmin solid hsl(240, 100%, 50%);
   border-radius: 10px;
+  height: 94vh;
 }
 
 /* title */
 .title {
   background-color: hsl(240, 100%, 50%);
-  border: .4vmin solid hsl(240, 100%, 50%);
   text-align: center;
   font-size: 9vmin;
-  font-weight: 600;
-  letter-spacing: .5vmin;
   border-radius: 10px 10px 0px 0px;
-  padding: 0vmin 2.3vmin;
+  padding: 0vmin 5vmin;
   margin: 0vmin;
 }
 
@@ -75,7 +73,7 @@ body {
   width: 100%;
   display: grid;
   justify-items: center;
-  align-items: baseline;
+  align-items: stretch;
   justify-content: center;
   justify-self: center;
   align-self: center;
