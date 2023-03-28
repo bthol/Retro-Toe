@@ -4,7 +4,7 @@
 
 body {
   background-color: rgb(13, 13, 23);
-  --boardSize: 50vmin;
+  --boardSize: 60vmin;
   color: rgb(255, 255, 0);
 }
 
@@ -21,15 +21,16 @@ body {
 .title {
   background-color: hsl(240, 100%, 50%);
   text-align: center;
-  font-size: 9vmin;
+  font-size: xx-large;
   border-radius: 10px 10px 0px 0px;
-  padding: 0vmin 5vmin;
+  padding: 0vmin .75vmin;
   margin: 0vmin;
+  width: var(--boardSize);
 }
 
 /* button */
 #btn1 {
-  font-size: 4vmin;
+  font-size: large;
   font-weight: 600;
   font-family: sans-serif;
   letter-spacing: .5vmin;
@@ -43,7 +44,7 @@ body {
 
 /* messages */
 #msg1 {
-  font-size: 5vmin;
+  font-size: large;
   margin: 8px 0px;
 }
 
