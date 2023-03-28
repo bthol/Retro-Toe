@@ -4,14 +4,14 @@
 
 body {
   background-color: rgb(13, 13, 23);
-  --boardSize: 60vmin;
+  --boardSize: 65vmin;
   color: rgb(255, 255, 0);
 }
 
 #game-border {
-  -moz-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
-  -webkit-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
-  box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  -moz-box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
+  -webkit-box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
+  box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
   border: 1.5vmin solid hsl(240, 100%, 50%);
   border-radius: 10px;
   height: 94vh;
@@ -19,23 +19,26 @@ body {
 
 /* title */
 .title {
+  cursor: default;
   background-color: hsl(240, 100%, 50%);
   text-align: center;
   font-size: xx-large;
   border-radius: 10px 10px 0px 0px;
-  padding: 0vmin .75vmin;
+  padding: 0vmin .6vmin;
   margin: 0vmin;
   width: var(--boardSize);
 }
 
 /* button */
 #btn1 {
+  cursor: pointer;
+  position: absolute;
+  top: 83vh;
   font-size: large;
-  font-weight: 600;
+  font-weight: 500;
   font-family: sans-serif;
-  letter-spacing: .5vmin;
-  padding: 1.3vmin;
-  border: 1vmin solid rgb(13, 13, 23);
+  padding: 5px 10px;
+  border: none;
   border-radius: 5vmin;
   margin: 20px 0px;
   background-color: hsl(240, 100%, 50%);
@@ -44,6 +47,7 @@ body {
 
 /* messages */
 #msg1 {
+  cursor: default;
   font-size: large;
   margin: 8px 0px;
 }
@@ -74,10 +78,7 @@ body {
   width: 100%;
   display: grid;
   justify-items: center;
-  align-items: stretch;
-  justify-content: center;
-  justify-self: center;
-  align-self: center;
+  align-content: flex-start;
 }
 
 /* ---------------- INTERACTIVITY ---------------- */
@@ -86,10 +87,10 @@ body {
     border: 1vmin solid rgb(13, 13, 23);
   }
   #board > div:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(244, 4, 4);
   }
   #btn1:hover {
     transition: 130ms;
-    border: 1vmin solid rgb(255, 0, 0);
+    border: 1vmin solid rgb(244, 4, 4);
   }
 }
