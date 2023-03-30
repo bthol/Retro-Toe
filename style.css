@@ -14,7 +14,14 @@ body {
   box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
   border: 1.5vmin solid hsl(240, 100%, 50%);
   border-radius: 10px;
-  height: 94vh;
+  height: 100vh;
+}
+
+/* messages */
+#msg1 {
+  cursor: default;
+  font-size: 4vmin;
+  margin: 2vmin 0vmin;
 }
 
 /* title */
@@ -22,7 +29,7 @@ body {
   cursor: default;
   background-color: hsl(240, 100%, 50%);
   text-align: center;
-  font-size: xx-large;
+  font-size: 9vmin;
   border-radius: 10px 10px 0px 0px;
   padding: 0vmin .6vmin;
   margin: 0vmin;
@@ -33,23 +40,16 @@ body {
 #btn1 {
   cursor: pointer;
   position: absolute;
-  top: 83vh;
-  font-size: large;
-  font-weight: 500;
+  top: 88vh;
+  font-size: 2em;
+  padding: .2em .4em;
+  margin: 3vmin;
+  font-weight: 600;
   font-family: sans-serif;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5vmin;
-  margin: 20px 0px;
+  border: 1vmin solid rgb(13, 13, 23);
+  border-radius: 5em;
   background-color: hsl(240, 100%, 50%);
   color: rgb(255, 255, 0);
-}
-
-/* messages */
-#msg1 {
-  cursor: default;
-  font-size: large;
-  margin: 8px 0px;
 }
 
 /* board */
@@ -64,7 +64,7 @@ body {
 
 #board > div {
   cursor: pointer;
-  font-size: 15vmin;
+  font-size: 18vmin;
   display: flex;
   justify-content: center;
   align-items: center;
