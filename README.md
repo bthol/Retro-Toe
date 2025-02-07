@@ -6,3 +6,5 @@
 - Algorithms for game logic are written from scratch using a mere 100 lines of code.
 - Mobile-friendly UI layout utilizes relative units, and the CSS Flex and Grid modules for maximal responsivity across device viewports.
 - Deployment of application uses GitHub Pages.
+
+https://bthol.github.io/Retro-Toe/
