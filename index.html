@@ -6,28 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Toe</title>
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <script defer src="./main.js"></script>
 </head>
 <body>
-  <div id="game-border">
-    <div id="game-wrapper">
-      <p id='msg1'></p>
-      <h1 class="title">Retro Toe</h1>
-      <section id="board">
-        <div id="s0" class="h1, v1"><p></p></div>
-        <div id="s1" class="h1, v2"><p></p></div>
-        <div id="s2" class="h1, v3"><p></p></div>
-        <div id="s3" class="h2, v1"><p></p></div>
-        <div id="s4" class="h2, v2"><p></p></div>
-        <div id="s5" class="h2, v3"><p></p></div>
-        <div id="s6" class="h3, v1"><p></p></div>
-        <div id="s7" class="h3, v2"><p></p></div>
-        <div id="s8" class="h3, v3"><p></p></div>
-      </section>
-      <button id='btn1'>RESET</button>
+  <div id="game-wrapper">
+    <div id="game-border">
+
+      <div class="grid-row-1">
+        <p id='msg1'></p>
+      </div>
+
+      <div class="grid-row-2">
+        <h1 class="title">Retro Toe</h1>
+        <section id="board">
+          <div id="s0" class="h1 v1"><p></p></div>
+          <div id="s1" class="h1 v2"><p></p></div>
+          <div id="s2" class="h1 v3"><p></p></div>
+          <div id="s3" class="h2 v1"><p></p></div>
+          <div id="s4" class="h2 v2"><p></p></div>
+          <div id="s5" class="h2 v3"><p></p></div>
+          <div id="s6" class="h3 v1"><p></p></div>
+          <div id="s7" class="h3 v2"><p></p></div>
+          <div id="s8" class="h3 v3"><p></p></div>
+        </section>
+      </div>
+
+      <div class="grid-row-3">
+        <button id='btn1'>RESET</button>
+      </div>
+
     </div>
   </div>
 </body>

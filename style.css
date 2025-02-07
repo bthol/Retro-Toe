@@ -4,17 +4,44 @@
 
 body {
   background-color: rgb(13, 13, 23);
-  --boardSize: 65vmin;
+  --boardSize: 60vmin;
   color: rgb(255, 255, 0);
+  margin: 0px;
+}
+
+#game-wrapper {
+  padding: 1.5vmin;
 }
 
 #game-border {
-  -moz-box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
-  -webkit-box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
-  box-shadow: 0vmin 0vmin 0vmin 1000vmin hsl(60, 100%, 40%);
+  -moz-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  -webkit-box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
+  box-shadow: 0vmin 0vmin 0vmin 1.5vmin hsl(60, 100%, 40%);
   border: 1.5vmin solid hsl(240, 100%, 50%);
   border-radius: 10px;
-  height: 100vh;
+  height: calc(100vh - 6vmin);
+  display: grid;
+  justify-items: center;
+  align-content: space-evenly;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.grid-row-1 {
+  grid-row: 1;
+  display: flex;
+  align-items: end;
+}
+.grid-row-2 {
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.grid-row-3 {
+  grid-row: 3;
+  display: flex;
+  align-items: start;
 }
 
 /* messages */
@@ -27,22 +54,20 @@ body {
 /* title */
 .title {
   cursor: default;
-  background-color: hsl(240, 100%, 50%);
   text-align: center;
   font-size: 9vmin;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5vmin 5vmin 0vmin 0vmin;
+  width: var(--boardSize);
   padding: 0vmin .6vmin;
   margin: 0vmin;
-  width: var(--boardSize);
+  background-color: hsl(240, 100%, 50%);
 }
 
 /* button */
 #btn1 {
   cursor: pointer;
-  position: absolute;
-  top: 88vh;
-  font-size: 2em;
-  padding: .2em .4em;
+  font-size: 5vmin;
+  padding: .2em .5em;
   margin: 3vmin;
   font-weight: 600;
   font-family: sans-serif;
@@ -71,14 +96,6 @@ body {
   color: white;
   margin: -.6vmin;
   border: 1.5vmin ridge rgb(0, 0, 255);
-}
-
-#game-wrapper {
-  height: 90vmin;
-  width: 100%;
-  display: grid;
-  justify-items: center;
-  align-content: flex-start;
 }
 
 /* ---------------- INTERACTIVITY ---------------- */
